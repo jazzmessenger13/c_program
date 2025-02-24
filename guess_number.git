@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main()
+	 {
+	 srand(time(0));
+	 int result;
+	 result = rand();
+	 result = result % 9 + 1;
+	 printf("There is a integer  ranging from 1 to 9 randomly called just now\n");
+	 printf("now guess it\n");
+	 int answer = 0;
+	 int count = 0;
+	 scanf("%d",&answer);
+	 getchar();
+	 while(answer != result && count < 9)
+		  {
+		  printf("Wrong!Try again!\n");
+		  count++;
+		  if(count > 7)
+			   {
+			   printf("poop!you idiot\nyou must be right next time!\n");
+			   }
+		  scanf("%d",&answer);
+		  getchar();
+		  }
+	 if(count > 8)
+		  {
+		  printf("ooh~just so so\n");
+		  }
+	 else printf("Good job!\n");
+	 return 0;
+	 }
